@@ -9,9 +9,6 @@ services:
         class: Tequila\Bundle\SwaggerBundle\Controller\DocsUiController
         arguments: ['%kernel.root_dir%']
         public: true
-
-    Tequila\Bundle\SwaggerBundle\Controller\:
-        resource: '../../Controller'
         tags: ['controller.service_arguments']
 
     Tequila\Bundle\SwaggerBundle\Command\GenerateJsonCommand:
