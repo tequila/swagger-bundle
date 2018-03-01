@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
                     ->info('List of regex patterns to document endpoints that match them.')
                     ->example(['^/api'])
                     ->prototype('scalar')->end()
-                    ->defaultValue('/docs/swagger')
+                    ->defaultValue(['/docs/swagger'])
                 ->end()
             ->end();
 
