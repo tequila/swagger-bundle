@@ -1,12 +1,9 @@
 services:
     _defaults:
-        autowire: true
-        autoconfigure: true
         public: false
 
-    _instanceof:
-        Tequila\Bundle\SwaggerBundle\Generator\SwaggerGeneratorInterface:
-            tags: ['tequila.swagger.generator']
+    Tequila\Bundle\SwaggerBundle\Generator\AnnotationsBasedGenerator:
+        tags: ['tequila.swagger.generator']
 
     Tequila\Bundle\SwaggerBundle\Controller\DocsUiController:
         arguments: ['%kernel.root_dir%']
@@ -15,6 +12,8 @@ services:
         arguments:
             - '@Tequila\Bundle\SwaggerBundle\Generator\GeneratorsChain'
             - '%kernel.root_dir%'
+        tags:
+            - { name: 'console.command', command: tequila_swagger:generate:json }
 
     Tequila\Bundle\SwaggerBundle\Generator\GeneratorsChain:
         arguments:
@@ -23,3 +22,4 @@ services:
 
     Tequila\Bundle\SwaggerBundle\EventListener\FilterPathsSubscriber:
         arguments: ['%tequila_swagger.path_patterns%']
+        tags: ['kernel.event_subscriber']
