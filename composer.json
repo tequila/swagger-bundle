@@ -1,0 +1,27 @@
+{
+    "name": "tequila/swagger-bundle",
+    "description": "Bundle for painless integration of zircote/swagger-php library into your Symfony app",
+    "type": "symfony-bundle",
+    "require": {
+        "zircote/swagger-php": "^2.0",
+        "php": "^7.1",
+        "symfony/framework-bundle": "^3.4|^4.0",
+        "symfony/console": "^3.4|^4.0",
+        "symfony/asset": "^3.4|^4.0",
+        "symfony/config": "^3.4|^4.0",
+        "symfony/dependency-injection": "^3.4|^4.0",
+        "symfony/event-dispatcher": "^3.4|^4.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Petr Buchyn",
+            "email": "petrbuchyn@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Tequila\\Bundle\\SwaggerBundle\\": "src/" }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
