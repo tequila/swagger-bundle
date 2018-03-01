@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+    <title>{% block title %}Tequila Swagger Bundle: Docs UI {% endblock title %}</title>
+    <!-- needed for adaptive design -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    {% endblock head %}
+</head>
+<body>
+<redoc></redoc>
+<script src="{{ asset('bundles/tequilaswagger/redoc.min.js') }}"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var spec = {{ spec }};
+    Redoc.init(spec)
+  });
+</script>
+</body>
+</html>

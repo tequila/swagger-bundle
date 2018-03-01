@@ -8,6 +8,9 @@ services:
         Tequila\Bundle\SwaggerBundle\Generator\SwaggerGeneratorInterface:
             tags: ['tequila.swagger.generator']
 
+    Tequila\Bundle\SwaggerBundle\Controller\DocsUiController:
+        arguments: ['%kernel.root_dir%']
+
     Tequila\Bundle\SwaggerBundle\Command\GenerateJsonCommand:
         arguments:
             - '@Tequila\Bundle\SwaggerBundle\Generator\GeneratorsChain'
