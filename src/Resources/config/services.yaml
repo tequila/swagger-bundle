@@ -1,13 +1,14 @@
 services:
     _defaults:
-        autowire: true
         public: false
 
     Tequila\Bundle\SwaggerBundle\Generator\AnnotationsBasedGenerator:
         tags: ['tequila.swagger.generator']
 
-    Tequila\Bundle\SwaggerBundle\Controller\DocsUiController:
+    tequila_swagger.controller.docs_ui:
+        class: Tequila\Bundle\SwaggerBundle\Controller\DocsUiController
         arguments: ['%kernel.root_dir%']
+        public: true
 
     Tequila\Bundle\SwaggerBundle\Controller\:
         resource: '../../Controller'
