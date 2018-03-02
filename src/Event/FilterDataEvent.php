@@ -2,7 +2,9 @@
 
 namespace Tequila\Bundle\SwaggerBundle\Event;
 
-class FilterDataEvent
+use Symfony\Component\EventDispatcher\Event;
+
+class FilterDataEvent extends Event
 {
     /**
      * @var array

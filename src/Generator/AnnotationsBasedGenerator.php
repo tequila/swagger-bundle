@@ -14,5 +14,7 @@ class AnnotationsBasedGenerator implements SwaggerGeneratorInterface
     public function generate(array $payload): array
     {
         $swagger = \Swagger\scan($payload['annotations_path']);
+
+        return json_decode(json_encode($swagger), true);
     }
 }
