@@ -13,7 +13,10 @@ class AnnotationsBasedGenerator implements SwaggerGeneratorInterface
 
     public function generate(array $payload): array
     {
-        $swagger = \Swagger\scan($payload['annotations_path']);
+        $options = array_key_exists('annotations_scan_options', $payload)
+            ? $payload['annotations_scan_options']
+            : [];
+        $swagger = \Swagger\scan($payload['annotations_path'], $options);
 
         return json_decode(json_encode($swagger), true);
     }
